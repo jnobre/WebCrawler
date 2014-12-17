@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MovieCatalog>
+    <Movie>
+        <Title>Nebraska (2013)</Title>
+        <Score>86</Score>
+        <GenresList>
+            <Genre>Adventure</Genre>
+            <Genre>Drama</Genre>
+        </GenresList>
+        <DirectorList>
+            <Director>Alexander Payne</Director>
+        </DirectorList>
+        <StarList>
+            <Star>Bruce Dern</Star>
+            <Star>Will Forte</Star>
+            <Star>June Squibb</Star>
+            <Star>Bob Odenkirk</Star>
+        </StarList>
+    </Movie>
+    <Movie>
+        <Title>O Clube de Dallas (2013)</Title>
+        <Score>84</Score>
+        <GenresList>
+            <Genre>M/16</Genre>
+            <Genre>|</Genre>
+            <Genre>|</Genre>
+        </GenresList>
+        <DirectorList>
+            <Director>Jean-Marc Vall?e</Director>
+        </DirectorList>
+        <StarList>
+            <Star>Matthew McConaughey</Star>
+            <Star>Jennifer Garner</Star>
+            <Star>Jared Leto</Star>
+            <Star>Steve Zahn</Star>
+        </StarList>
+    </Movie>
+    <Movie>
+        <Title>Kaze tachinu (2013)</Title>
+        <Score>84</Score>
+        <GenresList>
+            <Genre>Animation</Genre>
+            <Genre>Biography</Genre>
+            <Genre>Drama</Genre>
+            <Genre>History</Genre>
+            <Genre>Romance</Genre>
+            <Genre>War</Genre>
+        </GenresList>
+        <DirectorList>
+            <Director>Hayao Miyazaki</Director>
+        </DirectorList>
+        <StarList>
+            <Star>Zach Callison</Star>
+            <Star>Mirai Shida</Star>
+            <Star>Hideaki Anno</Star>
+            <Star>Jun Kunimura</Star>
+        </StarList>
+    </Movie>
+    <Movie>
+        <Title>Is the Man Who Is Tall Happy?: An Animated Conversation with Noam Chomsky (2013)</Title>
+        <Score>76</Score>
+        <GenresList>
+            <Genre>Documentary</Genre>
+            <Genre>Animation</Genre>
+        </GenresList>
+        <DirectorList>
+            <Director>Michel Gondry</Director>
+        </DirectorList>
+        <StarList>
+            <Star>Noam Chomsky</Star>
+            <Star>Michel Gondry</Star>
+        </StarList>
+    </Movie>
+    <Movie>
+        <Title>Philomena (2013)</Title>
+        <Score>76</Score>
+        <GenresList>
+            <Genre>Drama</Genre>
+        </GenresList>
+        <DirectorList>
+            <Director>Stephen Frears</Director>
+        </DirectorList>
+        <StarList>
+            <Star>Judi Dench</Star>
+            <Star>Steve Coogan</Star>
+            <Star>Sophie Kennedy Clark</Star>
+            <Star>Mare Winningham</Star>
+        </StarList>
+    </Movie>
+</MovieCatalog>

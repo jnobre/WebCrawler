@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="MovieCatalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Movie"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Movie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Title"/>
+        <xs:element minOccurs="0" ref="Score"/>
+        <xs:element ref="GenresList"/>
+        <xs:element ref="DirectorList"/>
+        <xs:element ref="StarList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+	<xs:element name="Title" type="xs:string"/>
+ 
+	 <xs:element name="Score">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value = "0"/>
+				<xs:maxInclusive value = "100"/>
+			</xs:restriction>
+		</xs:simpleType>
+	 </xs:element>
+ 
+	<xs:element name="GenresList">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element minOccurs = "0" maxOccurs="unbounded" ref="Genre"/>
+      </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+	
+  <xs:element name="DirectorList">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element minOccurs = "0" maxOccurs="unbounded" ref="Director"/>
+      </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+	
+	<xs:element name="StarList">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element minOccurs = "0" maxOccurs="unbounded" ref="Star"/>
+      </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+  
+  <xs:element name="Genre" type = "xs:string"/>
+  <xs:element name="Director" type="xs:string"/>
+  <xs:element name="Star" type="xs:string"/>
+
+</xs:schema>
