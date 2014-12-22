@@ -23,25 +23,25 @@ public class TopicMessageSender {
 	private Session s;
 	private Destination t;
 	private MessageProducer mp;
-	private static final String PROVIDER_URL = "http-remoting://127.0.0.1:8081";
-
-	  
+	private static final String PROVIDER_URL = "http-remoting://127.0.0.1:8080";
+	
+	//private static final String PROVIDER_URL = "remote://localhost:4447";
+	
 	public TopicMessageSender() 
 	{
 
-		connectionFactoryLookupAddress = new String("jms/RemoteConnectionFactory");
+		connectionFactoryLookupAddress = new String("RemoteConnectionFactory");
 		destinationLookupAddress = new String("jms/topic/movieCatalog");
 		environment = new Properties();
 		environment.put(Context.SECURITY_PRINCIPAL, "testuser");
 		environment.put(Context.SECURITY_CREDENTIALS, "is");
 		environment.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
 		environment.put(Context.PROVIDER_URL, System.getProperty(Context.PROVIDER_URL, PROVIDER_URL));
-        
+
 	}
 	
 	public void openConnection() throws NamingException, JMSException 
 	{
-		int ola;
 		
 		System.out.println("Entra....");
 		InitialContext iCtx = new InitialContext(environment);
@@ -58,7 +58,8 @@ public class TopicMessageSender {
 		
 	}
 	
-	public void sendMessage(String string) throws JMSException {
+	public void sendMessage(String string) throws JMSException 
+	{
 		TextMessage tm = this.s.createTextMessage(string);
 		this.mp.send(tm);
 	}
