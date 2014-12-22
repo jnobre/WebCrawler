@@ -10,6 +10,7 @@ import java.util.Observable;
 
 
 public class JobList extends Observable{
+	
 	private ArrayList<Job<String,String>> list;
 	
 	public JobList() {
@@ -29,9 +30,9 @@ public class JobList extends Observable{
 			
 			this.setChanged();
 			this.notifyObservers(null);
-		} else {
+		/*} else {
 			//list.add(new Job<String, String>(Job.file, job));
-		}
+		*/}
 	}
 	
 	public void addJobBatch(String fileBatch) throws FileNotFoundException, IOException{
@@ -60,6 +61,7 @@ public class JobList extends Observable{
 	}
 
 	public class Job <TYPE,CONTENT> {
+		
 		public static final String url = "URL";
 		public static final String file = "FILE";
 		public final String type;
@@ -75,4 +77,5 @@ public class JobList extends Observable{
 			return (type.equals(Job.file) ? true : false );
 		}
 	}
+	
 }

@@ -9,10 +9,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
-
-
-
 import movies.*;
 
 public class IMDBMovieCatalog {
@@ -62,10 +58,11 @@ public class IMDBMovieCatalog {
 	
 	public void fetchImdbCatalog(String url) throws IOException
 	{
-		Document doc;
 		
+		Document doc;
+		System.out.println("Teste02 ");
 		doc = Jsoup.connect(url).get(); //Gets IMDB HTML
-			
+		System.out.println("Teste03");	
 		Element main = doc.getElementById("main");//Gets the "main" part
 		Elements links = main.getElementsByClass("overview-top");//Gets the "overview-top" part that contains info about all the movies
 

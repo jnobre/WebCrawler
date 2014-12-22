@@ -29,33 +29,29 @@ public class TopicMessageSender {
 	
 	public TopicMessageSender() 
 	{
-
 		connectionFactoryLookupAddress = new String("RemoteConnectionFactory");
 		destinationLookupAddress = new String("jms/topic/movieCatalog");
 		environment = new Properties();
 		environment.put(Context.SECURITY_PRINCIPAL, "testuser");
 		environment.put(Context.SECURITY_CREDENTIALS, "is");
 		environment.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
-		environment.put(Context.PROVIDER_URL, System.getProperty(Context.PROVIDER_URL, PROVIDER_URL));
-
+		environment.put(Context.PROVIDER_URL,  "http-remoting://127.0.0.1:8080");
+		//System.getProperty(Context.PROVIDER_URL, PROVIDER_URL)
 	}
 	
 	public void openConnection() throws NamingException, JMSException 
 	{
 		
-		System.out.println("Entra....");
 		InitialContext iCtx = new InitialContext(environment);
-		System.out.println("Sai....");
 		
 		this.cf = (ConnectionFactory) iCtx.lookup(connectionFactoryLookupAddress);
 		this.t = (Destination) iCtx.lookup(destinationLookupAddress);
-		this.c = this.cf.createConnection("testuser",
-										   "is");
+		this.c = this.cf.createConnection(environment.getProperty(Context.SECURITY_PRINCIPAL),
+										  environment.getProperty(Context.SECURITY_CREDENTIALS));
 		this.c.start();
 		this.s = this.c.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		this.mp = this.s.createProducer(this.t);
-		System.out.println("Sai do metodo openconnection!!!  ");
-		
+	
 	}
 	
 	public void sendMessage(String string) throws JMSException 
@@ -64,7 +60,8 @@ public class TopicMessageSender {
 		this.mp.send(tm);
 	}
 
-	public void closeConnection() throws JMSException {
+	public void closeConnection() throws JMSException 
+	{
 		this.c.close();
 	}
 

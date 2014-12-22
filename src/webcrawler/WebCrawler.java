@@ -56,6 +56,7 @@ public class WebCrawler extends Thread implements Observer {
 			// if successful process previous sessions unsent messages
 			System.out.println("Processing unsent messages from previous sessions...");
 			if (processUnsentMessages() == false) {
+				
 				// Activate offTopicMode
 				this.enterOffTopicMode();
 			}
@@ -65,7 +66,6 @@ public class WebCrawler extends Thread implements Observer {
 			e1.printStackTrace();
 			// Activate offTopicMode
 			this.enterOffTopicMode();
-	
 		}
 		
 		
@@ -93,7 +93,7 @@ public class WebCrawler extends Thread implements Observer {
 				System.out.println("Could not process the given URL");
 				continue;
 			}
-		
+			System.out.println("Teste04");
 			String xml_message = new String();
 			try {
 				xml_message = XMLHelper.marshal(movies.movCatalog, WebCrawler.xsdFile, false);
@@ -183,12 +183,10 @@ public class WebCrawler extends Thread implements Observer {
 		} 
 		catch (IOException e1) 
 		{ /*ignore*/ }
-		
 	}
 	
 	private boolean processUnsentMessages() 
-	{		
-		
+	{	
 		ArrayList<String> savedCrawling = new ArrayList<String>();
 		
 		try {
@@ -404,6 +402,7 @@ public class WebCrawler extends Thread implements Observer {
 			crawlerList.get(i).setName("crawler"+i);
 			crawlerList.get(i).start();
 		}
+		
 		return crawlerList;
 	}
 	
