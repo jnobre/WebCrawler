@@ -29,7 +29,7 @@ public class TopicMessageSender {
 	
 	public TopicMessageSender() 
 	{
-		connectionFactoryLookupAddress = new String("RemoteConnectionFactory");
+		connectionFactoryLookupAddress = new String("jms/RemoteConnectionFactory");
 		destinationLookupAddress = new String("jms/topic/movieCatalog");
 		environment = new Properties();
 		environment.put(Context.SECURITY_PRINCIPAL, "testuser");
