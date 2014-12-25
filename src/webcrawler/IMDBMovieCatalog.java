@@ -60,7 +60,7 @@ public class IMDBMovieCatalog {
 	{
 		
 		Document doc;
-		System.out.println("Teste02 ");
+		System.out.println("Teste02 url -> "+url);
 		doc = Jsoup.connect(url).get(); //Gets IMDB HTML
 		System.out.println("Teste03");	
 		Element main = doc.getElementById("main");//Gets the "main" part
