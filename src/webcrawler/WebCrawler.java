@@ -187,6 +187,7 @@ public class WebCrawler extends Thread implements Observer {
 	
 	private boolean processUnsentMessages() 
 	{	
+		
 		ArrayList<String> savedCrawling = new ArrayList<String>();
 		
 		try {
