@@ -399,6 +399,7 @@ public class WebCrawler extends Thread implements Observer {
 	
 	public static ArrayList<WebCrawler> startCrawlers(int maxCrawlers, JobList jobList)
 	{
+		
 		ArrayList<WebCrawler> crawlerList = new ArrayList<WebCrawler>();
 		for(int i=0;i<maxCrawlers;i++)
 		{
