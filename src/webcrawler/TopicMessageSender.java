@@ -36,6 +36,7 @@ public class TopicMessageSender {
 		environment.put(Context.SECURITY_CREDENTIALS, "is");
 		environment.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
 		environment.put(Context.PROVIDER_URL,  "http-remoting://127.0.0.1:8080");
+		environment.put("jboss.naming.client.ejb.context", true);
 		//System.getProperty(Context.PROVIDER_URL, PROVIDER_URL)
 	}
 	

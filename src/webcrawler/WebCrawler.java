@@ -363,16 +363,17 @@ public class WebCrawler extends Thread implements Observer {
 				System.out.println(":error:invalid command");
 			}
 			
+
+			
 		} while (true);
 		
 		sc.close();
 		System.out.println("Terminating... Waiting for the crawler...");
 		
 		for (WebCrawler webCrawler : crawlerList) {
-			System.out.println("Ola1111111111111111111111");
+		
 			webCrawler.setToShutdown();// terminate crawler
-
-			System.out.println("Ola1111111111111111111111222222222222222222");
+	
 			try {
 				webCrawler.join();
 			} catch (InterruptedException e) {
