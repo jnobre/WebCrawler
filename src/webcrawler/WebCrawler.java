@@ -355,7 +355,8 @@ public class WebCrawler extends Thread implements Observer {
 					System.out.println(":error:file not found");
 				}
 			
-			} else if(line.startsWith("job:")) {
+			} else if(line.startsWith("job:")) 
+			{
 				jobList.addJob(line.substring(4));
 			}
 			else
