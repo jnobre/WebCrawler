@@ -65,7 +65,7 @@ public class IMDBMovieCatalog {
 		System.out.println("Teste03");	
 		Element main = doc.getElementById("main");//Gets the "main" part
 		Elements links = main.getElementsByClass("overview-top");//Gets the "overview-top" part that contains info about all the movies
-
+		
 		for(int i=0;i<links.size();i++)//for each movie
 		{
 			Movie m = new Movie();

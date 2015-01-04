@@ -355,7 +355,8 @@ public class WebCrawler extends Thread implements Observer {
 					System.out.println(":error:file not found");
 				}
 			
-			} else if(line.startsWith("job:")) 
+			} 
+			else if(line.startsWith("job:")) 
 			{
 				jobList.addJob(line.substring(4));
 			}
@@ -363,8 +364,6 @@ public class WebCrawler extends Thread implements Observer {
 			{
 				System.out.println(":error:invalid command");
 			}
-			
-
 			
 		} while (true);
 		
@@ -388,19 +387,16 @@ public class WebCrawler extends Thread implements Observer {
 	}
 	
 	public static boolean crawlersAlive(ArrayList<WebCrawler> crawlerList)
-	{
-		
+	{		
 		for (WebCrawler webCrawler : crawlerList) {
 			if(webCrawler.isAlive())
 				return true;
 		}
 		return false;
-
 	}
 	
 	public static ArrayList<WebCrawler> startCrawlers(int maxCrawlers, JobList jobList)
-	{
-		
+	{		
 		ArrayList<WebCrawler> crawlerList = new ArrayList<WebCrawler>();
 		for(int i=0;i<maxCrawlers;i++)
 		{
