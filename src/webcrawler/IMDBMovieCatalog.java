@@ -19,18 +19,23 @@ public class IMDBMovieCatalog {
 	}
 	  
 	public String getTitle(Element link){
+		
 		return link.getElementsByAttribute("title").attr("title");//we get the title
+	
 	}
 	
 	public void getGenre(Element link, List<String> list){
+	
 		Elements genres = link.getElementsByClass("cert-runtime-genre").get(0).getElementsByTag("span");//the genre list
 		for(int j=0;j<genres.size();j+=2)
 		{
 			list.add(genres.get(j).ownText());
 		}
+	
 	}
 	
 	public BigInteger getScore(Element link){
+	
 		Elements rating = link.getElementsByClass("metascore");
 		if(rating.size() != 0)
 		{
@@ -38,6 +43,7 @@ public class IMDBMovieCatalog {
 		}
 		else
 			return null;
+	
 	}
 	
 	public void getPeople(Element link, List<String> director_list, List<String> star_list){
@@ -60,9 +66,9 @@ public class IMDBMovieCatalog {
 	{
 		
 		Document doc;
-		System.out.println("Teste02 url -> "+url);
+		
 		doc = Jsoup.connect(url).get(); //Gets IMDB HTML
-		System.out.println("Teste03");	
+		
 		Element main = doc.getElementById("main");//Gets the "main" part
 		Elements links = main.getElementsByClass("overview-top");//Gets the "overview-top" part that contains info about all the movies
 		

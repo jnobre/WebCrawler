@@ -92,21 +92,22 @@ public class WebCrawler extends Thread implements Observer {
 			} catch (IOException e1) {
 				System.out.println("Could not process the given URL");
 				continue;
-			}
+			} 
+			
 			System.out.println("Teste04");
-			String xml_message = new String();
-			try {
+				String xml_message = new String();
+				/*		try {
 				xml_message = XMLHelper.marshal(movies.movCatalog, WebCrawler.xsdFile, false);
 			} catch (JAXBException | IOException | SAXException e) {
 				System.out.println("The xml did not pass the verification... droped!");
 				continue;
 			}
-			
+		*/
 			if (this.isOffTopic()) {
 				try {
 					appendLineToFile(xml_message, crawlerTempDatabase);
 				} catch (IOException e) {
-					/*ignore*/
+					/* ignore */
 				}
 			} else {
 				
@@ -123,7 +124,6 @@ public class WebCrawler extends Thread implements Observer {
 					// Activate offTopicMode
 					this.enterOffTopicMode();
 				}
-				
 			}
 		}
 		
